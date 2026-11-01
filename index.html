@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridianix Advisory | Operations, compliance, clinical and HR advisory</title>
+<meta name="description" content="One advisory partner for healthcare, tech and finance teams. We fix what is misaligned across operations, compliance, clinical and HR, then train your people to run it without us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{--navy:#0F2537;--navy-2:#1C3A52;--teal:#0E7C7B;--slate:#4A6072;--mist:#F4F7F9;--white:#fff;--gold:#D4AF37;--pale:#C9D6E0;--line:#E3E9EE;--bf-accent:#0E7C7B;
+  --ease:cubic-bezier(.2,.7,.2,1);--land:cubic-bezier(.3,1.4,.5,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);line-height:1.55;font-size:18px}
+h1,h2,h3{font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:700;letter-spacing:-.01em;margin:0}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.label{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 14px;z-index:50}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+/* The center point: a gold diamond, never a dot */
+.dm{display:inline-block;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* Buttons (component library) */
+.btn{display:inline-flex;align-items:center;gap:12px;font:600 16px/1 'IBM Plex Sans',sans-serif;padding:16px 24px;border-radius:2px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.btn--primary{background:var(--navy);color:#fff}
+.btn--primary:hover{background:var(--navy-2)}
+.btn--text{padding:6px 0;border:0;border-bottom:2px solid var(--teal);border-radius:0;color:var(--navy)}
+.btn--text:hover{color:var(--teal)}
+.btn.is-sending .dm{background:var(--teal)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.4) blur(6px)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:12px;padding-bottom:12px}
+.nav__logo img{height:64px;width:auto;display:block}
+.nav__links{display:none;align-items:center;gap:32px}
+.nav__links a:not(.btn){text-decoration:none;font-weight:600}
+.nav__links a:not(.btn):hover{color:var(--teal)}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:10px 14px;border:1px solid #8193A3;border-radius:2px}
+.menu summary::-webkit-details-marker{display:none}
+.menu__panel{position:absolute;right:24px;top:92px;background:#fff;border:1px solid var(--line);padding:20px;min-width:240px;display:grid;gap:14px;box-shadow:0 12px 32px rgba(15,37,55,.12)}
+.menu__panel a:not(.btn){text-decoration:none;font-weight:600}
+@media(min-width:900px){.nav__links{display:flex}.menu{display:none}}
+
+/* Hero */
+.hero{background:var(--mist);overflow:hidden}
+.hero__in{display:grid;gap:40px;align-items:center;padding-top:64px;padding-bottom:80px}
+@media(min-width:900px){.hero__in{grid-template-columns:1.15fr .85fr;padding-top:104px;padding-bottom:120px}}
+.hang{position:relative;padding-left:36px}
+.hang::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;background:var(--teal)}
+.hero h1{font-size:clamp(42px,6.2vw,80px);line-height:1.02;margin:18px 0 24px}
+.hero h1 span{color:var(--teal)}
+.hero__lede{font-size:clamp(18px,2vw,21px);color:var(--slate);max-width:560px;margin-bottom:36px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+/* Hero diagram: four functions' handoffs, aligned on one center line */
+.hero__viz{display:flex;justify-content:center}
+.hero__viz svg{width:100%;max-width:500px;height:auto;display:block;overflow:visible}
+.lane{fill:#fff;stroke:var(--line);stroke-width:1}
+.lane-label{font:700 13px 'IBM Plex Sans',sans-serif;letter-spacing:.12em;fill:var(--slate)}
+@media(max-width:600px){.lane-label{font-size:18px}}
+.flow{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round}
+.mer{fill:var(--teal)}
+.tick{fill:#fff;stroke:var(--teal);stroke-width:2.5}
+.end{fill:var(--teal)}
+
+/* Facts */
+.facts{border-bottom:1px solid var(--line)}
+.facts__in{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.fact{padding:32px 24px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0}
+.fact b{display:flex;align-items:center;gap:14px;font-size:52px;line-height:1;font-weight:700}
+.fact b .dm{width:12px;height:12px}
+.fact span{display:block;margin-top:10px;color:var(--slate)}
+@media(max-width:520px){.fact{border-left:0;border-top:1px solid var(--line)}.fact:first-child{border-top:0}}
+
+/* Sections */
+.sec{padding:96px 0}
+.sec--mist{background:var(--mist)}
+.sec__head{max-width:760px;margin-bottom:56px}
+.sec__head h2{font-size:clamp(32px,4vw,48px);line-height:1.1;margin-top:14px}
+.sec__head p{margin-top:18px;color:var(--slate);font-size:20px}
+
+/* Problem */
+.split{display:grid;gap:48px}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.scatter{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scatter div{background:#fff;border:1px dashed #8193A3;padding:20px;color:var(--slate)}
+.scatter b{display:block;color:var(--navy);margin-bottom:6px}
+@media(max-width:420px){.scatter{grid-template-columns:1fr}}
+
+/* Services */
+.cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{position:relative;background:#fff;border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:14px}
+.card::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;background:var(--teal);transform-origin:left}
+.card h3{font-size:26px}
+.card p{color:var(--slate)}
+.card .num{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--slate)}
+.card .hand{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-weight:600;font-size:16px;color:var(--navy)}
+.card .hand em{font-style:normal;color:var(--teal)}
+
+/* Approach: stages on the meridian */
+.steps{position:relative;display:grid;gap:56px;padding-left:56px;max-width:860px;list-style:none;margin:0}
+.steps::before,.steps::after{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:3px}
+.steps::before{background:var(--line)}
+.steps::after{background:var(--teal);transform-origin:top;transform:scaleY(var(--fill,1))}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-52px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--teal);border:3px solid var(--teal);z-index:1;transition:background .3s var(--ease),border-color .3s var(--ease)}
+.step--end::before{border-radius:0;left:-50px;top:8px;width:15px;height:15px;transform:rotate(45deg);background:var(--gold);border-color:var(--gold)}
+.step h3{font-size:28px;margin:6px 0 10px}
+.step p{color:var(--slate);max-width:640px}
+.step ul{margin:14px 0 0;padding-left:20px;color:var(--navy)}
+
+/* Industries */
+.inds{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:2px solid var(--navy)}
+.ind{padding:28px 28px 28px 0}
+.ind+.ind{padding-left:28px;border-left:1px solid var(--line)}
+@media(max-width:820px){.ind+.ind{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+.ind h3{font-size:28px;margin-bottom:10px}
+.ind p{color:var(--slate)}
+
+/* Promise */
+.promise{background:var(--navy);color:#fff;padding:104px 0}
+.promise blockquote{margin:0;max-width:980px;padding-left:36px;position:relative}
+.promise blockquote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);transform-origin:top}
+.promise .pin{position:absolute;left:-6px;top:10px;width:15px;height:15px;background:var(--gold);transform:rotate(45deg)}
+.promise q{display:block;quotes:none;font-size:clamp(28px,3.4vw,44px);line-height:1.2;font-weight:700}
+.promise p{color:var(--pale);margin-top:24px;font-size:20px;max-width:760px}
+
+/* Contact */
+.contact{display:grid;gap:48px}
+@media(min-width:900px){.contact{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.contact h2{font-size:clamp(32px,4vw,48px);line-height:1.1;margin-top:14px}
+.contact__lede{margin-top:18px;color:var(--slate);font-size:20px}
+.form{background:#fff;border:1px solid var(--line);padding:32px;display:grid;gap:20px}
+@media(max-width:520px){.form{padding:20px}}
+.field label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.input{width:100%;font:400 16px/1.4 'IBM Plex Sans',sans-serif;color:var(--navy);background:#fff;border:1px solid #8193A3;border-radius:2px;padding:14px 16px}
+.input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,124,123,.3)}
+.help{font-size:14px;color:var(--slate);margin-top:6px}
+.form__status{font-weight:600;padding:12px 16px;background:var(--mist);border-left:3px solid var(--teal)}
+.form__status.is-error{border-left-color:var(--navy)}
+.form__status:empty{display:none}
+.btn:disabled{cursor:progress;opacity:.75}
+.contact__list{display:grid;gap:18px;margin-top:32px}
+.contact__list div{border-top:1px solid var(--line);padding-top:16px}
+.contact__list b{display:block}
+.contact__list span{color:var(--slate)}
+
+/* Footer */
+.foot{background:var(--navy);color:var(--pale);padding:64px 0 32px}
+.foot__grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.foot a{color:var(--pale);text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .label{color:#fff;margin-bottom:12px}
+.foot__mark img{height:64px;width:auto;display:block;filter:brightness(0) invert(1)}
+.foot__bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--navy-2);font-size:14px}
+
+/* Scroll rail: the page's own meridian (wide screens only) */
+.rail{display:none}
+@media(min-width:1100px){
+  .rail{display:block;position:fixed;left:14px;top:96px;bottom:32px;width:2px;background:var(--line);z-index:15;pointer-events:none}
+  .rail__fill{position:absolute;inset:0;background:var(--teal);transform-origin:top;transform:scaleY(var(--p,0))}
+  .rail__pt{position:absolute;left:-4px;top:0;width:10px;height:10px;background:var(--gold);transform:translateY(calc(var(--p,0) * (100vh - 138px))) rotate(45deg)}
+}
+
+/* ---------- Motion: draw, settle, land. Only when the visitor allows it. ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* Hero, on load: the center line draws, the tangled handoffs straighten onto it, the gold point lands last.
+     The paths' resting shape is the aligned one, so browsers without CSS path animation show the aligned state. */
+  .mer{transform-box:fill-box;transform-origin:top;animation:draw .6s var(--ease) both .1s}
+  .flow{animation:.75s cubic-bezier(.6,0,.2,1) both;animation-delay:calc(var(--i) * 90ms + .7s)}
+  .f0{animation-name:t0}.f1{animation-name:t1}.f2{animation-name:t2}.f3{animation-name:t3}
+  .tick,.end{animation:fade .35s var(--ease) both;animation-delay:calc(var(--i) * 90ms + 1.5s)}
+  .hub{transform-box:fill-box;transform-origin:center;animation:land .5s var(--land) both 1.95s}
+  .rise{animation:rise .6s var(--ease) both;animation-delay:calc(var(--i) * 80ms + 250ms)}
+  @keyframes t0{0%,25%{d:path("M130 80 C 200 80, 210 300, 300 230 C 370 175, 390 40, 470 130");stroke:#8193A3}}
+  @keyframes t1{0%,25%{d:path("M130 160 C 190 40, 250 345, 300 95 C 350 25, 400 330, 470 255");stroke:#8193A3}}
+  @keyframes t2{0%,25%{d:path("M130 240 C 205 355, 230 60, 300 300 C 360 350, 395 90, 470 175");stroke:#8193A3}}
+  @keyframes t3{0%,25%{d:path("M130 320 C 180 205, 260 375, 300 180 C 360 60, 410 360, 470 330");stroke:#8193A3}}
+  @keyframes draw{from{transform:scaleY(0)}}
+  @keyframes fade{from{opacity:0}}
+  @keyframes land{from{transform:scale(.4);opacity:0}}
+  @keyframes rise{from{transform:translateY(16px);opacity:0}}
+
+  /* Scroll reveals (hidden states only once JS is running, so content never depends on it) */
+  .js .rv{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+  .js .rv.in{opacity:1;transform:none}
+
+  /* At a glance: the diamond beside the 1 lands */
+  .js .facts .dm{transform:rotate(45deg) scale(.4);opacity:0;transition:transform .5s var(--land) .3s,opacity .3s .3s}
+  .js .facts.in .dm{transform:rotate(45deg);opacity:1}
+
+  /* Problem: four scattered cards settle onto one grid */
+  .js .scatter div{transition:transform .7s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+  .js .scatter:not(.in) div:nth-child(1){transform:translate(-14px,-18px) rotate(-3deg)}
+  .js .scatter:not(.in) div:nth-child(2){transform:translate(18px,10px) rotate(2.5deg)}
+  .js .scatter:not(.in) div:nth-child(3){transform:translate(-10px,16px) rotate(2deg)}
+  .js .scatter:not(.in) div:nth-child(4){transform:translate(16px,-12px) rotate(-2.5deg)}
+
+  /* Services: each card's teal border draws left to right */
+  .js .card::before{transform:scaleX(0);transition:transform .7s var(--ease);transition-delay:calc(var(--d,0) * 90ms + 150ms)}
+  .js .card.in::before{transform:none}
+
+  /* Approach: the line fills with scroll, nodes fill as it reaches them, the last one lands gold */
+  .js .steps{--fill:0}
+  .js .step::before{background:#fff}
+  .js .step.on::before{background:var(--teal)}
+  .js .step--end::before{transform:rotate(45deg) scale(.4);background:#fff;border-color:var(--teal);transition:transform .5s var(--land),background .3s,border-color .3s}
+  .js .step--end.on::before{transform:rotate(45deg);background:var(--gold);border-color:var(--gold)}
+
+  /* Promise: the line draws down, then the gold point lands at its top */
+  .js .promise blockquote::before{transform:scaleY(0);transition:transform .8s var(--ease)}
+  .js .promise .pin{transform:rotate(45deg) scale(.4);opacity:0;transition:transform .5s var(--land) .75s,opacity .3s .75s}
+  .js .promise blockquote.in::before{transform:none}
+  .js .promise blockquote.in .pin{transform:rotate(45deg);opacity:1}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div class="rail" aria-hidden="true"><div class="rail__fill"></div><div class="rail__pt"></div></div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="#top" aria-label="Meridianix Advisory home"><img src="assets/logo.png" alt="Meridianix Advisory" width="133" height="64"></a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#industries">Industries</a>
+      <a class="btn btn--primary" href="#contact" style="padding:12px 18px">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Open menu">Menu</summary>
+      <nav class="menu__panel" aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#industries">Industries</a>
+        <a class="btn btn--primary" href="#contact">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__in">
+      <div class="hang">
+        <p class="label rise" style="--i:0">Operations | Compliance | Clinical | HR</p>
+        <h1 id="hero-h" class="rise" style="--i:1">Aligned at the center.<br><span>Yours to own.</span></h1>
+        <p class="hero__lede rise" style="--i:2">One advisory partner for healthcare, tech and finance teams. We fix what is misaligned from the boardroom to the front line, then train your people to run it without us.</p>
+        <div class="hero__cta rise" style="--i:3">
+          <a class="btn btn--primary" href="#contact">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
+          <a class="btn btn--text" href="#approach">See how an engagement ends</a>
+        </div>
+      </div>
+      <div class="hero__viz">
+        <!-- Swimlanes: each function's handoffs start tangled across lanes and straighten onto one center line -->
+        <svg viewBox="0 0 480 400" role="img" aria-labelledby="viz-t">
+          <title id="viz-t">Operations, Compliance, Clinical and HR as four lanes. Their tangled handoffs straighten into parallel flows that all cross one center line.</title>
+          <rect class="lane" x="0" y="40" width="480" height="80"/>
+          <rect class="lane" x="0" y="120" width="480" height="80" style="fill:var(--mist)"/>
+          <rect class="lane" x="0" y="200" width="480" height="80"/>
+          <rect class="lane" x="0" y="280" width="480" height="80" style="fill:var(--mist)"/>
+          <text class="lane-label" x="14" y="62">OPERATIONS</text>
+          <text class="lane-label" x="14" y="142">COMPLIANCE</text>
+          <text class="lane-label" x="14" y="222">CLINICAL</text>
+          <text class="lane-label" x="14" y="302">HR</text>
+          <rect class="mer" x="298.5" y="16" width="3" height="368"/>
+          <path class="flow f0" style="--i:0" d="M130 80 C 200 80, 230 80, 300 80 C 370 80, 400 80, 470 80"/>
+          <path class="flow f1" style="--i:1" d="M130 160 C 200 160, 230 160, 300 160 C 370 160, 400 160, 470 160"/>
+          <path class="flow f2" style="--i:2" d="M130 240 C 200 240, 230 240, 300 240 C 370 240, 400 240, 470 240"/>
+          <path class="flow f3" style="--i:3" d="M130 320 C 200 320, 230 320, 300 320 C 370 320, 400 320, 470 320"/>
+          <circle class="tick" style="--i:0" cx="300" cy="80" r="6"/>
+          <circle class="tick" style="--i:1" cx="300" cy="160" r="6"/>
+          <circle class="tick" style="--i:2" cx="300" cy="240" r="6"/>
+          <circle class="tick" style="--i:3" cx="300" cy="320" r="6"/>
+          <rect class="end" style="--i:0" x="464" y="74" width="12" height="12"/>
+          <rect class="end" style="--i:1" x="464" y="154" width="12" height="12"/>
+          <rect class="end" style="--i:2" x="464" y="234" width="12" height="12"/>
+          <rect class="end" style="--i:3" x="464" y="314" width="12" height="12"/>
+          <polygon class="hub" points="300,186 314,200 300,214 286,200" fill="#D4AF37"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="At a glance" data-rv>
+    <div class="wrap facts__in">
+      <div class="fact"><b>4</b><span>practice areas under one partner</span></div>
+      <div class="fact"><b>3</b><span>regulated industries we know from the inside</span></div>
+      <div class="fact"><b>1 <span class="dm" aria-hidden="true"></span></b><span>goal for every engagement: you no longer need us</span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="prob-h">
+    <div class="wrap split">
+      <div class="sec__head hang rv" style="margin-bottom:0">
+        <p class="label">The problem</p>
+        <h2 id="prob-h">Four firms, four reports, and nobody holding the line.</h2>
+        <p>Growing companies hire one consultant for operations, another for compliance, another for HR, and someone else again for clinical quality. Each fixes its piece. None of them sees how the pieces pull against each other, and all of them leave you dependent on them.</p>
+      </div>
+      <div class="scatter" data-rv>
+        <div style="--d:0"><b>Operations</b>New workflow, no owner</div>
+        <div style="--d:1"><b>Compliance</b>Controls nobody follows</div>
+        <div style="--d:2"><b>HR</b>Policies that miss the floor</div>
+        <div style="--d:3"><b>Clinical</b>Quality measures in a binder</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--mist" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec__head hang rv">
+        <p class="label">Services</p>
+        <h2 id="svc-h">One center point across four disciplines.</h2>
+        <p>Every service ends with a hand-off: the thing your team owns and runs when we leave.</p>
+      </div>
+      <div class="cards">
+        <article class="card rv" style="--d:0"><p class="num">01</p><h3>Operations</h3><p>Workflows, capacity and vendor management mapped and rebuilt around how work really moves.</p><p class="hand"><em>Hand-off:</em> your ops lead owns the playbook</p></article>
+        <article class="card rv" style="--d:1"><p class="num">02</p><h3>Compliance</h3><p>HIPAA, SOC 2, SOX and state requirements turned into controls people actually follow.</p><p class="hand"><em>Hand-off:</em> your team runs the next audit</p></article>
+        <article class="card rv" style="--d:2"><p class="num">03</p><h3>Clinical</h3><p>Care pathways, credentialing and quality programs that hold up to any survey.</p><p class="hand"><em>Hand-off:</em> clinical leads own the measures</p></article>
+        <article class="card rv" style="--d:3"><p class="num">04</p><h3>HR</h3><p>Roles, policies and performance systems built to scale with the company.</p><p class="hand"><em>Hand-off:</em> managers run the cycle themselves</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="approach" aria-labelledby="app-h">
+    <div class="wrap">
+      <div class="sec__head hang rv">
+        <p class="label">Approach</p>
+        <h2 id="app-h">How an engagement ends matters more than how it starts.</h2>
+        <p>Three stages, top to bottom. The last one is the one most firms skip.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><p class="label">Stage 1</p><h3>Map</h3><p>We map how work actually flows across operations, compliance, clinical and HR, from leadership down to the front line, and find where they pull against each other.</p></li>
+        <li class="step"><p class="label">Stage 2</p><h3>Align</h3><p>We fix the highest-cost gaps first and set every function on the same line: one set of priorities, controls and owners.</p></li>
+        <li class="step step--end"><p class="label" style="color:var(--navy)">Stage 3</p><h3>Hand off</h3><p>We train your people to run what we built, and we do not leave until they can. You get:</p>
+          <ul><li>Documented playbooks for every workflow we touched</li><li>A named, trained owner for each one</li><li>A clear exit date, unless you ask us to stay</li></ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec sec--mist" id="industries" aria-labelledby="ind-h">
+    <div class="wrap">
+      <div class="sec__head hang rv">
+        <p class="label">Industries</p>
+        <h2 id="ind-h">Built for regulated, fast-growing teams.</h2>
+      </div>
+      <div class="inds">
+        <div class="ind rv" style="--d:0"><h3>Healthcare</h3><p>Practices, health systems and digital health companies balancing patient care, credentialing and HIPAA while they grow.</p></div>
+        <div class="ind rv" style="--d:1"><h3>Tech</h3><p>Scaling software and data companies that need SOC 2, real operations and an HR backbone before the next funding round.</p></div>
+        <div class="ind rv" style="--d:2"><h3>Finance</h3><p>Fintechs, lenders and advisory firms where regulators, auditors and customers all expect controls that hold.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise" aria-label="Our promise">
+    <div class="wrap">
+      <blockquote data-rv>
+        <span class="pin" aria-hidden="true"></span>
+        <q>We solve the problem in front of you and hand you everything you need to solve the next one.</q>
+        <p>Documented processes, trained people and clear ownership. You will never be kept on a retainer you do not need.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="con-h">
+    <div class="wrap contact">
+      <div class="hang rv">
+        <p class="label">Alignment check</p>
+        <h2 id="con-h">Tell us what is stuck.</h2>
+        <p class="contact__lede">A 45 minute call with a partner. If we are not the right fit, we will say so and point you to who is.</p>
+        <div class="contact__list">
+          <div><b>What you get from the call</b><span>A first read on where operations, compliance, clinical and HR are pulling against each other.</span></div>
+          <div><b>What it costs</b><span>Nothing. No proposal unless you ask for one.</span></div>
+        </div>
+      </div>
+      <form class="form rv" style="--d:1" action="https://formspree.io/f/xjyyawvd" method="POST">
+        <input type="hidden" name="_subject" value="New alignment check request">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+        <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" class="input" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" class="input" autocomplete="email" required></div>
+        <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" class="input" autocomplete="organization"></div>
+        <div class="field"><label for="f-area">Where it hurts most</label><select id="f-area" name="area" class="input"><option>Operations</option><option>Compliance</option><option>Clinical</option><option>HR</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="f-msg">What is going on?</label><textarea id="f-msg" name="message" rows="4" class="input" aria-describedby="f-msg-h"></textarea><p id="f-msg-h" class="help">Two or three sentences is plenty. Please do not include patient or confidential information.</p></div>
+        <button class="btn btn--primary" type="submit" style="justify-self:start">Send request <span class="dm" aria-hidden="true"></span></button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__mark"><img src="assets/logo.png" alt="Meridianix Advisory" width="133" height="64"></div>
+        <p style="margin-top:14px">Aligned at the center. Yours to own.</p>
+      </div>
+      <nav aria-label="Footer services"><p class="label">Services</p><div style="display:grid;gap:8px"><a href="#services">Operations</a><a href="#services">Compliance</a><a href="#services">Clinical</a><a href="#services">HR</a></div></nav>
+      <div><p class="label">Industries</p><p>Healthcare<br>Tech<br>Finance</p></div>
+      <div><p class="label">Contact</p><a href="#contact">Book an alignment check</a></div>
+    </div>
+    <p class="foot__bottom">&copy; 2026 Meridianix Advisory</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+  if (reduce || !('IntersectionObserver' in window)) return; // final states are the defaults
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Reveal: .rv items and [data-rv] groups get .in once 15% is in view
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.rv,[data-rv]').forEach(function(el){ io.observe(el); });
+
+  // Approach line fills with scroll; each stage turns on as the line reaches it
+  var steps = document.querySelector('.steps'), items = steps ? steps.querySelectorAll('.step') : [];
+  var rail = document.querySelector('.rail'), ticking = false;
+  function update(){
+    ticking = false;
+    var vh = innerHeight;
+    if (steps) {
+      var r = steps.getBoundingClientRect(), mid = vh * .6;
+      var f = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+      steps.style.setProperty('--fill', f.toFixed(3));
+      items.forEach(function(it){ it.classList.toggle('on', it.getBoundingClientRect().top + 14 <= mid); });
+    }
+    if (rail) {
+      var max = document.documentElement.scrollHeight - vh;
+      rail.style.setProperty('--p', max > 0 ? (scrollY / max).toFixed(4) : 0);
+    }
+  }
+  addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', update);
+  update();
+})();
+</script>
+<script>
+// Contact form: send to Formspree and confirm on the page. Without JavaScript the
+// form still posts to Formspree, which shows its own thank-you page.
+(function(){
+  var form = document.querySelector('.form');
+  if (!form || !window.fetch) return;
+  var button = form.querySelector('button'), status = form.querySelector('.form__status');
+  function show(text, isError){
+    status.textContent = text;
+    status.classList.toggle('is-error', !!isError);
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    show('');
+    button.disabled = true;
+    button.classList.add('is-sending');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function(r){
+        if (!r.ok) throw new Error('Formspree returned ' + r.status);
+        form.reset();
+        show('Thanks, we have your request. A partner will reply to the email you gave us.');
+      })
+      .catch(function(){
+        show('Your request did not send. Please try again.', true);
+      })
+      .then(function(){
+        button.disabled = false;
+        button.classList.remove('is-sending');
+      });
+  });
+})();
+</script>
+</body>
+</html>
