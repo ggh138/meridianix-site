@@ -7,4 +7,5 @@ deployment:
     - /bin/cp privacy.html $DEPLOYPATH
     - /bin/cp terms.html $DEPLOYPATH
     - /bin/cp favicon.ico $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
