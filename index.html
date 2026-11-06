@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meridianix Advisory | Operations, compliance, clinical and HR advisory</title>
 <meta name="description" content="One advisory partner for healthcare, tech and finance teams. We fix what is misaligned across operations, compliance, clinical and HR, then train your people to run it without us.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
@@ -158,8 +162,9 @@ img{max-width:100%}
 .foot a{color:var(--pale);text-decoration:none}
 .foot a:hover{color:#fff;text-decoration:underline}
 .foot .label{color:#fff;margin-bottom:12px}
-.foot__mark img{height:64px;width:auto;display:block;filter:brightness(0) invert(1)}
-.foot__bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--navy-2);font-size:14px}
+.foot__mark img{height:64px;width:auto;display:block}
+.foot__bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--navy-2);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+.foot__legal{display:flex;flex-wrap:wrap;gap:8px 24px}
 
 /* Scroll rail: the page's own meridian (wide screens only) */
 .rail{display:none}
@@ -233,6 +238,7 @@ img{max-width:100%}
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
       <a href="#industries">Industries</a>
+      <a href="about.html">About us</a>
       <a class="btn btn--primary" href="#contact" style="padding:12px 18px">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
     </nav>
     <details class="menu">
@@ -241,6 +247,7 @@ img{max-width:100%}
         <a href="#services">Services</a>
         <a href="#approach">Approach</a>
         <a href="#industries">Industries</a>
+        <a href="about.html">About us</a>
         <a class="btn btn--primary" href="#contact">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
       </nav>
     </details>
@@ -323,7 +330,7 @@ img{max-width:100%}
       </div>
       <div class="cards">
         <article class="card rv" style="--d:0"><p class="num">01</p><h3>Operations</h3><p>Workflows, capacity and vendor management mapped and rebuilt around how work really moves.</p><p class="hand"><em>Hand-off:</em> your ops lead owns the playbook</p></article>
-        <article class="card rv" style="--d:1"><p class="num">02</p><h3>Compliance</h3><p>HIPAA, SOC 2, SOX and state requirements turned into controls people actually follow.</p><p class="hand"><em>Hand-off:</em> your team runs the next audit</p></article>
+        <article class="card rv" style="--d:1"><p class="num">02</p><h3>Compliance</h3><p>HIPAA, SOC 2, HITRUST and state requirements turned into controls people actually follow.</p><p class="hand"><em>Hand-off:</em> your team runs the next audit</p></article>
         <article class="card rv" style="--d:2"><p class="num">03</p><h3>Clinical</h3><p>Care pathways, credentialing and quality programs that hold up to any survey.</p><p class="hand"><em>Hand-off:</em> clinical leads own the measures</p></article>
         <article class="card rv" style="--d:3"><p class="num">04</p><h3>HR</h3><p>Roles, policies and performance systems built to scale with the company.</p><p class="hand"><em>Hand-off:</em> managers run the cycle themselves</p></article>
       </div>
@@ -391,6 +398,7 @@ img{max-width:100%}
         <div class="field"><label for="f-msg">What is going on?</label><textarea id="f-msg" name="message" rows="4" class="input" aria-describedby="f-msg-h"></textarea><p id="f-msg-h" class="help">Two or three sentences is plenty. Please do not include patient or confidential information.</p></div>
         <button class="btn btn--primary" type="submit" style="justify-self:start">Send request <span class="dm" aria-hidden="true"></span></button>
         <p class="form__status" role="status" aria-live="polite"></p>
+        <p class="help" style="margin-top:0">We use your details only to reply. See our <a href="privacy.html">privacy policy</a>.</p>
       </form>
     </div>
   </section>
@@ -400,14 +408,17 @@ img{max-width:100%}
   <div class="wrap">
     <div class="foot__grid">
       <div>
-        <div class="foot__mark"><img src="assets/logo.png" alt="Meridianix Advisory" width="133" height="64"></div>
+        <div class="foot__mark"><img src="assets/Meridianix%20logo_gold.png" alt="Meridianix Advisory" width="133" height="64"></div>
         <p style="margin-top:14px">Aligned at the center. Yours to own.</p>
       </div>
       <nav aria-label="Footer services"><p class="label">Services</p><div style="display:grid;gap:8px"><a href="#services">Operations</a><a href="#services">Compliance</a><a href="#services">Clinical</a><a href="#services">HR</a></div></nav>
-      <div><p class="label">Industries</p><p>Healthcare<br>Tech<br>Finance</p></div>
+      <div><p class="label">Company</p><div style="display:grid;gap:8px"><a href="about.html">About us</a><a href="#industries">Industries</a></div></div>
       <div><p class="label">Contact</p><a href="#contact">Book an alignment check</a></div>
     </div>
-    <p class="foot__bottom">&copy; 2026 Meridianix Advisory</p>
+    <div class="foot__bottom">
+      <p>&copy; 2026 Meridianix Advisory</p>
+      <nav class="foot__legal" aria-label="Legal"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a></nav>
+    </div>
   </div>
 </footer>
 

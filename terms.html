@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of use | Meridianix Advisory</title>
+<meta name="description" content="The terms that apply when you use the Meridianix Advisory website, including what our content is and is not.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{--navy:#0F2537;--navy-2:#1C3A52;--teal:#0E7C7B;--slate:#4A6072;--mist:#F4F7F9;--white:#fff;--gold:#D4AF37;--pale:#C9D6E0;--line:#E3E9EE;
+  --ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);line-height:1.55;font-size:18px}
+h1,h2,h3{font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:700;letter-spacing:-.01em;margin:0}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.label{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 14px;z-index:50}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.dm{display:inline-block;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;font:600 16px/1 'IBM Plex Sans',sans-serif;padding:16px 24px;border-radius:2px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.btn--primary{background:var(--navy);color:#fff}
+.btn--primary:hover{background:var(--navy-2)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.4) blur(6px)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:12px;padding-bottom:12px}
+.nav__logo img{height:64px;width:auto;display:block}
+.nav__links{display:none;align-items:center;gap:32px}
+.nav__links a:not(.btn){text-decoration:none;font-weight:600}
+.nav__links a:not(.btn):hover{color:var(--teal)}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:10px 14px;border:1px solid #8193A3;border-radius:2px}
+.menu summary::-webkit-details-marker{display:none}
+.menu__panel{position:absolute;right:24px;top:92px;background:#fff;border:1px solid var(--line);padding:20px;min-width:240px;display:grid;gap:14px;box-shadow:0 12px 32px rgba(15,37,55,.12)}
+.menu__panel a:not(.btn){text-decoration:none;font-weight:600}
+@media(min-width:900px){.nav__links{display:flex}.menu{display:none}}
+
+/* Page hero */
+.hero{background:var(--mist)}
+.hero__in{padding-top:64px;padding-bottom:64px}
+@media(min-width:900px){.hero__in{padding-top:88px;padding-bottom:88px}}
+.hang{position:relative;padding-left:36px}
+.hang::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;background:var(--teal)}
+.hero h1{font-size:clamp(40px,5.6vw,64px);line-height:1.04;margin:18px 0 20px}
+.hero__lede{font-size:clamp(18px,2vw,21px);color:var(--slate);max-width:700px}
+.hero__date{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:15px;font-weight:600;color:var(--slate)}
+
+/* Legal layout */
+.legal{padding:72px 0 96px}
+.legal__grid{display:grid;gap:48px}
+@media(min-width:1000px){.legal__grid{grid-template-columns:240px minmax(0,760px);gap:80px}}
+.toc{align-self:start}
+@media(min-width:1000px){.toc{position:sticky;top:120px}}
+.toc ol{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;font-size:15px;counter-reset:toc}
+.toc li{counter-increment:toc;display:flex;gap:10px}
+.toc li::before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-weight:700;min-width:22px}
+.toc a{text-decoration:none;color:var(--slate)}
+.toc a:hover{color:var(--teal);text-decoration:underline}
+@media(max-width:999px){.toc{border:1px solid var(--line);padding:20px 24px}}
+
+.summary{position:relative;background:var(--mist);padding:28px 28px 28px 32px;margin-bottom:56px}
+.summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal)}
+.summary h2{font-size:22px;margin:8px 0 14px}
+
+.prose{counter-reset:sec}
+.prose section{padding-top:8px;margin-bottom:48px;scroll-margin-top:110px;counter-increment:sec}
+.prose section > h2{display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,2.6vw,30px);line-height:1.2;margin-bottom:16px}
+.prose section > h2::before{content:counter(sec,decimal-leading-zero);font-size:15px;letter-spacing:.08em;color:var(--teal)}
+.prose h3{font-size:19px;margin:24px 0 8px}
+.prose p{color:var(--slate);margin-top:14px}
+.prose p:first-of-type{margin-top:0}
+.prose b{color:var(--navy)}
+.prose a{color:var(--teal);font-weight:600}
+.prose a:hover{color:var(--navy)}
+.list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;color:var(--slate)}
+.list li{position:relative;padding-left:26px}
+.list li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;background:var(--teal);transform:rotate(45deg)}
+.prose .callout{margin-top:20px;padding:16px 20px;border-left:3px solid var(--gold);background:#FBF8EC;color:var(--navy)}
+
+/* Footer */
+.foot{background:var(--navy);color:var(--pale);padding:64px 0 32px;border-top:1px solid var(--navy-2)}
+.foot__grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.foot a{color:var(--pale);text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot a[aria-current="page"]{color:#fff}
+.foot .label{color:#fff;margin-bottom:12px}
+.foot__mark img{height:64px;width:auto;display:block}
+.foot__bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--navy-2);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+.foot__legal{display:flex;flex-wrap:wrap;gap:8px 24px}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .6s var(--ease) both;animation-delay:calc(var(--i) * 80ms + 150ms)}
+  @keyframes rise{from{transform:translateY(16px);opacity:0}}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="index.html" aria-label="Meridianix Advisory home"><img src="assets/logo.png" alt="Meridianix Advisory" width="133" height="64"></a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="about.html">About us</a>
+      <a class="btn btn--primary" href="index.html#contact" style="padding:12px 18px">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Open menu">Menu</summary>
+      <nav class="menu__panel" aria-label="Mobile">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="about.html">About us</a>
+        <a class="btn btn--primary" href="index.html#contact">Book an alignment check <span class="dm" aria-hidden="true"></span></a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__in">
+      <div class="hang">
+        <p class="label rise" style="--i:0">Legal</p>
+        <h1 id="hero-h" class="rise" style="--i:1">Terms of use</h1>
+        <p class="hero__lede rise" style="--i:2">The ground rules for using this website. They are short, and we have written them to be read, not skimmed past.</p>
+        <p class="hero__date rise" style="--i:3"><span class="dm" aria-hidden="true"></span>Last updated November 5, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="legal">
+    <div class="wrap legal__grid">
+      <nav class="toc" aria-labelledby="toc-h">
+        <p class="label" id="toc-h">On this page</p>
+        <ol>
+          <li><a href="#agree">Using this website</a></li>
+          <li><a href="#advice">Information, not advice</a></li>
+          <li><a href="#client">No client relationship</a></li>
+          <li><a href="#checks">Alignment checks</a></li>
+          <li><a href="#send">What not to send us</a></li>
+          <li><a href="#ip">Our content and brand</a></li>
+          <li><a href="#conduct">Acceptable use</a></li>
+          <li><a href="#links">Other websites</a></li>
+          <li><a href="#warranty">Disclaimer</a></li>
+          <li><a href="#liability">Limitation of liability</a></li>
+          <li><a href="#changes">Changes to these terms</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <aside class="summary" aria-labelledby="sum-h">
+          <p class="label">The short version</p>
+          <h2 id="sum-h">This site explains what we do. Advice comes from an engagement.</h2>
+          <ul class="list">
+            <li>What you read here is general information, not legal, clinical or compliance advice for your situation.</li>
+            <li>Contacting us or booking an alignment check does not make you a client. A signed agreement does.</li>
+            <li>Please do not send patient or confidential information through this site.</li>
+            <li>Our content and brand belong to us. Share links freely, but ask before copying.</li>
+          </ul>
+        </aside>
+
+        <div class="prose">
+          <section id="agree" aria-labelledby="agree-h">
+            <h2 id="agree-h">Using this website</h2>
+            <p>These terms apply to meridianixadvisory.com, operated by Meridianix Advisory ("Meridianix," "we," "us"). By using the site, you agree to them. If you do not agree, please do not use the site.</p>
+            <p>Our <a href="privacy.html">privacy policy</a> explains how we handle information you send us and is part of these terms.</p>
+          </section>
+
+          <section id="advice" aria-labelledby="advice-h">
+            <h2 id="advice-h">Information, not advice</h2>
+            <p>The content on this site describes our services and shares general information about operations, compliance, clinical and HR topics. It is not legal, medical, clinical, accounting, regulatory or employment advice, and it may not reflect the latest changes in law or regulation.</p>
+            <p>Every organization's situation is different. Do not act, or decide not to act, based on this site without advice from a qualified professional who knows your facts. Meridianix is not a law firm, and nothing on this site creates an attorney-client relationship.</p>
+          </section>
+
+          <section id="client" aria-labelledby="client-h">
+            <h2 id="client-h">No client relationship</h2>
+            <p>Reading this site, sending us a message or taking part in an alignment check does not make you our client. A client relationship begins only when you and Meridianix sign a written engagement agreement. That agreement, not these terms, governs the services we provide.</p>
+          </section>
+
+          <section id="checks" aria-labelledby="checks-h">
+            <h2 id="checks-h">Alignment checks</h2>
+            <p>An alignment check is a complimentary 45 minute conversation with one of our executive advisors. Anything we share during it is a preliminary observation based on the limited information available in that conversation. It is not an audit, assessment, certification or formal opinion, and you should not rely on it as one.</p>
+            <p>There is no obligation on either side. We will not send a proposal unless you ask for one.</p>
+          </section>
+
+          <section id="send" aria-labelledby="send-h">
+            <h2 id="send-h">What not to send us</h2>
+            <p>Please do not send the following through our contact form or by email before an engagement and any needed agreements are in place:</p>
+            <ul class="list">
+              <li>Protected health information or any other patient information</li>
+              <li>Employee personnel records or other sensitive personal information</li>
+              <li>Trade secrets or other confidential business information</li>
+            </ul>
+            <p class="callout"><b>Information you send before an engagement is not treated as confidential.</b> Once we agree on how to protect it, we will tell you exactly what we need and how to send it.</p>
+          </section>
+
+          <section id="ip" aria-labelledby="ip-h">
+            <h2 id="ip-h">Our content and brand</h2>
+            <p>The text, design, graphics, logos and the Meridianix Advisory name on this site belong to Meridianix or are used with permission. You may view the site and print or save pages for your own reference or your organization's internal use. You may not copy, republish, modify or sell our content, or use our name or logo, without our written permission.</p>
+            <p>You are always welcome to link to any page on this site.</p>
+          </section>
+
+          <section id="conduct" aria-labelledby="conduct-h">
+            <h2 id="conduct-h">Acceptable use</h2>
+            <p>When using this site, you agree not to:</p>
+            <ul class="list">
+              <li>Use it for anything unlawful or fraudulent</li>
+              <li>Submit false information or impersonate someone else</li>
+              <li>Send spam, malware or anything meant to harm the site or its visitors</li>
+              <li>Try to access parts of the site or its systems that are not meant to be public</li>
+              <li>Scrape or copy the site in bulk with automated tools</li>
+            </ul>
+          </section>
+
+          <section id="links" aria-labelledby="links-h">
+            <h2 id="links-h">Other websites</h2>
+            <p>This site may link to websites and services run by others. We do not control them and are not responsible for their content or practices. Their own terms and privacy policies apply.</p>
+          </section>
+
+          <section id="warranty" aria-labelledby="warranty-h">
+            <h2 id="warranty-h">Disclaimer</h2>
+            <p>We work to keep this site accurate and available, but we provide it "as is" and "as available." To the fullest extent the law allows, we make no warranties of any kind about the site or its content, including warranties of accuracy, completeness, fitness for a particular purpose or uninterrupted access.</p>
+          </section>
+
+          <section id="liability" aria-labelledby="liability-h">
+            <h2 id="liability-h">Limitation of liability</h2>
+            <p>To the fullest extent the law allows, Meridianix and its advisors are not liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, revenue or profits, arising from your use of this site or reliance on its content. Our total liability for any claim related to the site is limited to $100.</p>
+            <p>This section applies to the website only. Liability for services we provide to clients is set by the engagement agreement.</p>
+          </section>
+
+          <section id="changes" aria-labelledby="changes-h">
+            <h2 id="changes-h">Changes to these terms</h2>
+            <p>We may update these terms from time to time. When we do, we will change the date at the top of this page. Continuing to use the site after an update means you accept the revised terms.</p>
+          </section>
+
+          <section id="contact" aria-labelledby="contact-h">
+            <h2 id="contact-h">Contact us</h2>
+            <p>Questions about these terms? Reach us through the <a href="index.html#contact">contact form</a>.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__mark"><img src="assets/Meridianix%20logo_gold.png" alt="Meridianix Advisory" width="133" height="64"></div>
+        <p style="margin-top:14px">Aligned at the center. Yours to own.</p>
+      </div>
+      <nav aria-label="Footer services"><p class="label">Services</p><div style="display:grid;gap:8px"><a href="index.html#services">Operations</a><a href="index.html#services">Compliance</a><a href="index.html#services">Clinical</a><a href="index.html#services">HR</a></div></nav>
+      <div><p class="label">Company</p><div style="display:grid;gap:8px"><a href="about.html">About us</a><a href="index.html#industries">Industries</a></div></div>
+      <div><p class="label">Contact</p><a href="index.html#contact">Book an alignment check</a></div>
+    </div>
+    <div class="foot__bottom">
+      <p>&copy; 2026 Meridianix Advisory</p>
+      <nav class="foot__legal" aria-label="Legal"><a href="privacy.html">Privacy policy</a><a href="terms.html" aria-current="page">Terms of use</a></nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
